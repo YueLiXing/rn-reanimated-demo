@@ -15,15 +15,8 @@ import {
   useColorScheme,
   View,
 } from 'react-native';
-import { logger } from "react-native-logs";
+import {logger} from "react-native-logs";
 
-import {
-  Colors,
-  DebugInstructions,
-  Header,
-  LearnMoreLinks,
-  ReloadInstructions,
-} from 'react-native/Libraries/NewAppScreen';
 import {NativeSyntheticEvent} from 'react-native/Libraries/Types/CoreEventTypes';
 import {NativeScrollEvent} from 'react-native/Libraries/Components/ScrollView/ScrollView';
 import Animated, {
@@ -47,7 +40,7 @@ function Section({children, title}: SectionProps): React.JSX.Element {
         style={[
           styles.sectionTitle,
           {
-            color: isDarkMode ? Colors.white : Colors.black,
+            color: isDarkMode ? 'white' : 'black',
           },
         ]}>
         {title}
@@ -56,7 +49,7 @@ function Section({children, title}: SectionProps): React.JSX.Element {
         style={[
           styles.sectionDescription,
           {
-            color: isDarkMode ? Colors.light : Colors.dark,
+            color: isDarkMode ? 'white' : 'black',
           },
         ]}>
         {children}
@@ -71,7 +64,7 @@ function App(): React.JSX.Element {
   const isDarkMode = useColorScheme() === 'dark';
 
   const backgroundStyle = {
-    backgroundColor: isDarkMode ? Colors.darker : Colors.lighter,
+    backgroundColor: 'white',
   };
   const safePadding = '5%';
 
@@ -91,9 +84,9 @@ function App(): React.JSX.Element {
 
     StatusBar.setBarStyle(bar, false);
   }, []);
-  useAnimatedReaction(() => shareHeight.value > 200, (prepared, previous) =>  {
+  useAnimatedReaction(() => shareHeight.value > 200, (prepared, previous) => {
     if (prepared !== previous) {
-      runOnJS(changeStatusBar)(prepared ?　"dark-content": 'light-content');
+      runOnJS(changeStatusBar)(prepared ? "dark-content" : 'light-content');
     }
   })
   const aniStyle0 = useAnimatedStyle(() => {
@@ -121,12 +114,12 @@ function App(): React.JSX.Element {
       />
       <ScrollView
         style={backgroundStyle} onScroll={onScroll}>
-        <View style={{paddingRight: safePadding}}>
-          <Header/>
+        <View style={{ paddingRight: safePadding }}>
+          <Text>Header</Text>
         </View>
         <View
           style={{
-            backgroundColor: isDarkMode ? Colors.black : Colors.white,
+            backgroundColor: 'white',
             paddingHorizontal: safePadding,
             paddingBottom: safePadding,
           }}>
@@ -139,15 +132,71 @@ function App(): React.JSX.Element {
             screen and then come back to see your edits.
           </Section>
           <Section title="See Your Changes">
-            <ReloadInstructions />
+            <Text>ReloadInstructions</Text>
           </Section>
           <Section title="Debug">
-            <DebugInstructions />
+            <Text>DebugInstructions</Text>
           </Section>
           <Section title="Learn More">
             Read the docs to discover what to do next:
           </Section>
-          <LearnMoreLinks />
+
+          <Section title="Step One">
+            Edit <Text style={styles.highlight}>App.tsx</Text> to change this
+            screen and then come back to see your edits.
+          </Section>
+          <Section title="See Your Changes">
+            <Text>ReloadInstructions</Text>
+          </Section>
+          <Section title="Debug">
+            <Text>DebugInstructions</Text>
+          </Section>
+          <Section title="Learn More">
+            Read the docs to discover what to do next:
+          </Section>
+
+          <Section title="Step One">
+            Edit <Text style={styles.highlight}>App.tsx</Text> to change this
+            screen and then come back to see your edits.
+          </Section>
+          <Section title="See Your Changes">
+            <Text>ReloadInstructions</Text>
+          </Section>
+          <Section title="Debug">
+            <Text>DebugInstructions</Text>
+          </Section>
+          <Section title="Learn More">
+            Read the docs to discover what to do next:
+          </Section>
+
+          <Section title="Step One">
+            Edit <Text style={styles.highlight}>App.tsx</Text> to change this
+            screen and then come back to see your edits.
+          </Section>
+          <Section title="See Your Changes">
+            <Text>ReloadInstructions</Text>
+          </Section>
+          <Section title="Debug">
+            <Text>DebugInstructions</Text>
+          </Section>
+          <Section title="Learn More">
+            Read the docs to discover what to do next:
+          </Section>
+
+          <Section title="Step One">
+            Edit <Text style={styles.highlight}>App.tsx</Text> to change this
+            screen and then come back to see your edits.
+          </Section>
+          <Section title="See Your Changes">
+            <Text>ReloadInstructions</Text>
+          </Section>
+          <Section title="Debug">
+            <Text>DebugInstructions</Text>
+          </Section>
+          <Section title="Learn More">
+            Read the docs to discover what to do next:
+          </Section>
+          <Text>LearnMoreLinks</Text>
         </View>
         {/*<View style={{ marginLeft: 10,width: '90%', borderWidth: 1}}>*/}
         {/*  <ACNoticeHorText color={'red'} canAni={canAni} content={'横向滚动公告，今天冰箱大促销。一个一个不要钱啊不要钱。快来快来快来'}/>*/}
