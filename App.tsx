@@ -96,8 +96,8 @@ function App(): React.JSX.Element {
     return shareHeight.value;
   });
   const aniStyle1 = useAnimatedStyle(() => {
-    return {position: 'absolute', height: dheight.value, backgroundColor: 'yellow', right: 5, width: 5, top: 0}
-    // return {position: 'absolute', height: shareHeight.value, backgroundColor: 'yellow', right: 5, width: 5, top: 0}
+    // return {position: 'absolute', height: dheight.value, backgroundColor: 'yellow', right: 5, width: 5, top: 0}
+    return {position: 'absolute', height: shareHeight.value, backgroundColor: 'yellow', right: 5, width: 5, top: 0}
   });
   const aniStyle2 = useAnimatedStyle(() => {
     return {position: 'absolute', height: shareHeight.value, backgroundColor: 'black', right: 10, width: 5, top: 0}
